@@ -1,5 +1,6 @@
 from Produto import Produto
 from DatabaseP import DatabaseP
+from Cliente import Cliente
 import os
 import time
 
@@ -9,13 +10,14 @@ class Main:
             "1": self.opcao1,
             "2": self.opcao2,
             "3": self.opcao3,
+            "4": self.opcao4,
             "0": self.sair
         }
 
     def mostrar_menu(self):
         os.system("clear")
         print("PROGRAMA DE CONTROLE\n====================")
-        print("[1]-Cadastro de Produto\n[2]-Operações com Produto\n[3]-Listar Produtos Ativos\n[0]-Sair")
+        print("[1]-Cadastro de Produto\n[2]-Operações com Produto\n[3]-Listar Produtos Ativos\n[4]-Cadastro de Clientes\n[0]-Sair")
 
     def executar(self):
         while True:
@@ -43,6 +45,11 @@ class Main:
         dbDadosProduto = ["", "", 3]
         d = DatabaseP()
         d.operacaoProduto(dbDadosProduto)
+
+    def opcao4(self):
+        c = Cliente()
+        c.cadastro()
+        c.salvarCliente()
 
     def sair(self):
         os.system("clear")

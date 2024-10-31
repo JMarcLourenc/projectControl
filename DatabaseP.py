@@ -2,8 +2,6 @@ import mysql.connector
 import time
 import os
 
-
-
 class DatabaseP:
     def __init__(self):
 
